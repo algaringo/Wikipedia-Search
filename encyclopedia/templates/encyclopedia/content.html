@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% load markup_tags %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+            
+    {{ content | apply_markup:"markdown" }}
+
+    <a href="{% url 'edit' title %}" role="button" class="btn btn-secondary btn-sm">Edit This Page</a>
+
+{% endblock %}
